@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# RewriteCond %{HTTPS} off [OR]
+# RewriteCond %{HTTP_HOST} ^www\.snippet.ehcan\.ir [NC]
+# RewriteRule ^(.*)$ https://snippet.ehcan.ir/$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !\.(html)
+RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
